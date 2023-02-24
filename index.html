@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API Project</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <!-- Chuck Norris jokes -->
+  <div class="display-4 text-center">Chuck Norris jokes</div>
+  <div class="APIContainer">
+    <div class="jokeContainer">
+      <img class="img-thumbnail" id="jokeIcon">
+      <div>
+        <a class="h2 jokeTitle" href="#">Want to hear a joke?</a>
+        <p id="joke"></p>
+      </div>
+      <button class="btn btn-primary" id="buttonGetJoke">Yes!</button>
+    </div>
+  </div>
+
+  <!-- Currency exchange rates -->
+  <div class="display-4 text-center">Currency exchange rates</div>
+  <div class="APIContainer">
+    <h4>Find out current currency exchange rates</h4>
+    <div class="currencyContainer">
+      <div style="margin-top: 16px">
+          <p>From: </p>
+          <p>To: </p>
+      </div>
+      <div style="margin-left: 20px">
+        <input class="form-control marginTopBottom" type="text" id="inputCurrencyFrom" value="EUR">
+        <input class="form-control marginTopBottom" type="text" id="inputCurrencyTo" value="USD">
+        <button class="btn btn-primary" id="buttonCurrency">Calculate</button>
+      </div>
+      <div class="currencyResult">
+        <h4 id="currencyResult">Result: 0</h4>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/main.js" type="module"></script>
+</body>
+
+</html>
