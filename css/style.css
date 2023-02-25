@@ -1,9 +1,7 @@
 body {
-    background-color: #f5f5f5;
-    font-family: 'Roboto', sans-serif;
     margin-top: 100px;
     margin-bottom: 100px;
-
+    background-color: rgb(255, 255, 228)
 }
 
 .APIContainer {
@@ -37,9 +35,12 @@ body {
 }
 
 #buttonGetJoke {
-    margin-left: auto;
+    margin-left: 10px;
 }
-
+#jokeIcon{
+   min-width: 50px; 
+   min-height: 50px; 
+}
 /* Currency */
 .currencyContainer {
     display: flex;
@@ -58,8 +59,10 @@ body {
     width: 100%;
 }
 
-.mySeparator {
-    height: 0.5px;
-    width: 80%;
-    background-color: whitesmoke;
+@media screen and (max-width: 500px) {
+    .APIContainer {
+        width: 90%;
+        min-width: 0;
+        margin-bottom: 200px;
+    }
 }
