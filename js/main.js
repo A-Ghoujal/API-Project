@@ -37,7 +37,6 @@ async function getJoke()
 
         // display data
         document.getElementById('joke').innerHTML = response.value;
-        document.getElementById('jokeIcon').src = response.icon_url;
         document.getElementsByClassName('jokeTitle')[0].href = response.url;
     })
     .catch(err => {
