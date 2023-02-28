@@ -6,6 +6,7 @@ import { MY_API_KEY } from './config.js';
 {
     setButtonFunctions();
     getJoke();
+
 })();
 
 function setButtonFunctions()
@@ -41,6 +42,7 @@ async function getJoke()
 
 // Xcurrency 
 
+
 const select = document.querySelectorAll('select');
 const input = document.querySelectorAll('input');
 const API_URL = "https://v6.exchangerate-api.com/v6/cd41f482039f5c09441ae9f9/latest/USD";
@@ -64,13 +66,10 @@ function convert (i, j) {
 }
 
 input[0].addEventListener('keyup', () => convert(1,0));
-  
 
 input[1].addEventListener('keyup', () =>  convert(0,1));
-  
 
 select[0].addEventListener('change', () =>  convert(1,0));
-  
 
 select[1].addEventListener('change', () =>  convert(0,1));
    
