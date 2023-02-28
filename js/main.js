@@ -1,17 +1,12 @@
 import { MY_API_KEY } from './config.js';
-import {currencyEl_one} from './config.js';
-import {currencyEl_two} from './config.js';
-import {amountEl_one} from './config.js';
-import {amountEl_two} from './config.js';
-import {rateEl} from './config.js';
-import {swap} from './config.js';
+
 
 
 (function onLoad()
 {
     setButtonFunctions();
     getJoke();
-    
+
 })();
 
 function setButtonFunctions()
@@ -41,41 +36,44 @@ async function getJoke()
         document.getElementById('joke').innerHTML = response.value;
         document.getElementsByClassName('jokeTitle')[0].href = response.url;
     })
-    .catch(err => {
-        console.log(err);
+    .catch(err => { console.log(err);
     });
 }
 
 // Xcurrency 
 
-function calculate() {
-    const currency_one = currencyEl_one.value;
-    const currency_two = currencyEl_two.value;
-  
-    fetch(`https://v6.exchangerate-api.com/v6/cd41f482039f5c09441ae9f9/latest/${currency_one}`)
-      .then((res) => res.json())
-      .then((data) => {
-        const rate = data.conversion_rates[currency_two];
-        rateEl.innerText = `1 ${currency_one} = ${rate} ${currency_two}`;
-  
-        amountEl_two.value = (amountEl_one.value * rate).toFixed(2);
-      });
-  }
-  
-  // Event Listeners
 
-  currencyEl_one.addEventListener('change', calculate);
-  amountEl_one.addEventListener('input', calculate);
-  currencyEl_two.addEventListener('change', calculate);
-  amountEl_two.addEventListener('input', calculate);
-  swap.addEventListener('click', () => {
-    const temp = currencyEl_one.value;
-    currencyEl_one.value = currencyEl_two.value;
-    currencyEl_two.value = temp;
-    calculate();
-  });
-  
-  calculate();
+const select = document.querySelectorAll('select');
+const input = document.querySelectorAll('input');
+const API_URL = "https://v6.exchangerate-api.com/v6/cd41f482039f5c09441ae9f9/latest/USD";
+let html = '';
 
+async function currency (){
+    const res = await fetch(API_URL);
+    const data = await res.json();
+    const arrKeys = Object.keys(data.conversion_rates);
+    const rates = data.conversion_rates;
+    arrKeys.map(item => {
+        return html += `<option value="${item}">${item}</option>`;
+    });
+
+for(let i = 0; i < select.length; i++){
+   select[i].innerHTML = html;
+};
+
+function convert (i, j) {
+    input [i].value = input [j].value * rates[select[i].value] / rates [select[j].value];
+}
+
+input[0].addEventListener('keyup', () => convert(1,0));
+
+input[1].addEventListener('keyup', () =>  convert(0,1));
+
+select[0].addEventListener('change', () =>  convert(1,0));
+
+select[1].addEventListener('change', () =>  convert(0,1));
+   
+};
+currency();
 
 
