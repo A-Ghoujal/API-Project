@@ -1,6 +1,6 @@
 # API-Project
 
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b6b50cca-0cfd-442f-bbbd-b9b6089dae4d/deploy-status)](https://app.netlify.com/sites/magnificent-kheer-016799/deploys)
 
 ## Structure
 
