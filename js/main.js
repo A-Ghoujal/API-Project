@@ -9,19 +9,15 @@ import {swap} from './config.js';
 
 (function onLoad()
 {
-    // set a function for each button
     setButtonFunctions();
-
-    // fetch from each API when the page loads
     getJoke();
-    // getCurrencyExchangeRates();
     
 })();
 
 function setButtonFunctions()
 {
     document.getElementById('buttonGetJoke').onclick = getJoke;
-    // document.getElementById('buttonCurrency').onclick = getCurrencyExchangeRates;
+    
     };
 
 
@@ -50,32 +46,6 @@ async function getJoke()
     });
 }
 
-// Currency Exchange rates
-// async function getCurrencyExchangeRates()
-// {
-//     const from = document.getElementById('inputCurrencyFrom').value;
-//     const to = document.getElementById('inputCurrencyTo').value;
-//     await fetch("https://currency-exchange.p.rapidapi.com/exchange?q=1.0&from=" + from + "&to=" + to, {
-//         "method": "GET",
-//         "headers": {
-//             "x-rapidapi-host": "currency-exchange.p.rapidapi.com",
-//             "x-rapidapi-key": MY_API_KEY,
-//         }
-//     })
-//     .then(response => response.json())
-//     .then(response => {
-//         console.log("Currency Exchange API object:");
-//         console.log(response);
-//         console.log("\n");
-
-//         // display data
-//         document.getElementById('currencyResult').innerHTML = 'Result: ' + response;
-//     })
-//     .catch(err => {
-//         console.log(err);
-//     });
-// }
-
 // Xcurrency 
 
 function calculate() {
@@ -85,7 +55,6 @@ function calculate() {
     fetch(`https://v6.exchangerate-api.com/v6/cd41f482039f5c09441ae9f9/latest/${currency_one}`)
       .then((res) => res.json())
       .then((data) => {
-        //   console.log(data);
         const rate = data.conversion_rates[currency_two];
         rateEl.innerText = `1 ${currency_one} = ${rate} ${currency_two}`;
   
@@ -94,6 +63,7 @@ function calculate() {
   }
   
   // Event Listeners
+
   currencyEl_one.addEventListener('change', calculate);
   amountEl_one.addEventListener('input', calculate);
   currencyEl_two.addEventListener('change', calculate);
