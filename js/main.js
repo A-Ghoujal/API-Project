@@ -4,6 +4,8 @@ import { MY_API_KEY } from './config.js';
 
 (function onLoad()
 {
+    setTimeout(function(){ alert("Welcome to my Chuck Norris Jokes page! Click the button to get a joke!"); }, 1000);
+    setTimeout(function(){ alert("You can also convert currencies!"); }, 10000);
     setButtonFunctions();
     getJoke();
 
@@ -12,7 +14,6 @@ import { MY_API_KEY } from './config.js';
 function setButtonFunctions()
 {
     document.getElementById('buttonGetJoke').onclick = getJoke;
-    
     };
 
 
