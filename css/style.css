@@ -1,68 +1,199 @@
-body {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    background-color: rgb(255, 255, 228)
-}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .con1 {
+    background-image: url(../img/memebg.jpg);
+    width: 100%;
+    height: 50vh;
+  }
+  
+  .con2 {
+    background-image: url(../img/currencybg.jpg);
+    width: 100%;
+    height: 50vh;
+  }
+  h1{
+        font-size: 50px;
+        color: #fff;
+        text-align: center;
+        animation: glow 0.5s ease-in-out infinite alternate;
+      }
+      
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fc0000, 0 0 20px #fff, 0 0 30px #04ff00, 0 0 40px #ff0000, 0 0 50px #04fbff, 0 0 60px #0022fd, 0 0 70px #0149ff;
+        }
+        
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #000000, 0 0 40px #000000, 0 0 50px #000000, 0 0 60px #000000, 0 0 70px #ffffff, 0 0 80px #040404;
+        }
+      }
+ 
+  p {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 1rem 25%;
+    background-color: rgb(75, 73, 73);
+    border-radius: 10px;
+    content: fixed;
+    width: 50%;
+  }
+  
+  .currency select {
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: center;
+  }
 
-.APIContainer {
+  .currency{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    width: 20%;
+    height: 10%;
+  }
+   .swap-rate-container{
+    display: flex;
+    flex-direction: inline;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    width: 20%;
+   
+   }
+   #rate{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+   }
+   #swap.btn{
+    width: 50px;
+    height: 50px;
+    font-size: 10px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    -webkit-animation: bounce 0.75s infinite;
+    margin-right: 2rem;
+   }
+
+  .APIContainer {
     margin: 50px auto 150px auto;
     padding: 10px 20px 10px 20px;
-    border: 1px solid darkgray;
     border-radius: 5px;
     width: 40%;
     min-width: 500px;
     height: 20%;
-}
-
-.marginTopBottom {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-/* Chuck Norris */
-.jokeContainer {
+  }
+  
+  .jokeContainer {
     display: flex;
     align-items: center;
-}
-
-.jokeTitle {
-    margin-left: 10px;
-}
-
-#joke {
-    margin-left: 10px;
-    margin-top: 5px;
-}
-
-#buttonGetJoke {
-    margin-left: 10px;
-}
-#jokeIcon{
-   width: 50px; 
-   height: 50px; 
-}
-/* Currency */
-.currencyContainer {
-    display: flex;
-}
-
-.currencyInput {
-    display: flex;
-    margin: 20px 0 20px 0px;
-}
-
-.currencyResult {
-    margin: auto;
-}
-
-#buttonCurrency {
-    width: 100%;
-}
-
-@media screen and (max-width: 500px) {
-    .APIContainer {
-        width: 90%;
-        min-width: 0;
-        margin-bottom: 200px;
+  }
+  
+  .jokeContainer p {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    opacity: 1;
+    border-radius: 10px;
+  
+  }
+  
+  .h2 {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255);
+    opacity: 1;
+    border-radius: 10px;
+  
+  }
+  
+  #buttonGetJoke {
+    width: 50%;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    opacity: 1;
+    border-radius: 50px;
+    -webkit-animation: bounce 0.75s infinite;
+  }
+  
+  @-webkit-keyframes bounce {
+    0% {
+      transform: scale(1, 1) translate(0px, 0px);
     }
-}
+  
+    30% {
+      transform: scale(1, 0.8) translate(0px, 10px);
+    }
+  
+    75% {
+      transform: scale(1, 1.1) translate(0px, -10px);
+    }
+  
+  }
+  
+  
+  #jokeIcon {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Currency */
+  /* .currencyContainer {
+      display: flex;
+  }
+  
+  .currencyInput {
+      display: flex;
+      margin: 20px 0 20px 0px;
+  }
+  
+  .currencyResult {
+      margin: auto;
+  }
+  
+  #buttonCurrency {
+      width: 100%;
+  } */
+  
+  @media screen and (max-width: 500px) {
+    .APIContainer {
+      width: 90%;
+      min-width: 0;
+      margin-bottom: 200px;
+    }
+  
+  }
+  
