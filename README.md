@@ -16,4 +16,5 @@ Js<br>
 
 index.html<br>
 
-Check the app here [Cemes Cenerator & Currency Converter](https://a-ghoujal.github.io/API-Project/)
+Check the app here [Cemes Cenerator & Currency Converter](magnificent-kheer-016799.netlify.app)
+
