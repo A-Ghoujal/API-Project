@@ -50,8 +50,6 @@
     margin: 1rem 25%;
     background-color: rgb(75, 73, 73);
     border-radius: 10px;
-    content: fixed;
-    width: 50%;
   }
   
   .currency select {
@@ -121,16 +119,14 @@
     background-color: rgb(255, 255, 255);
     opacity: 1;
     border-radius: 10px;
-  
   }
   
   .h2 {
     text-decoration: none;
     font-size: 30px;
     font-weight: bold;
-    color: rgb(0, 0, 0);
+    color: rgb(177, 42, 42);
     text-align: center;
-    margin-top: 10px;
     background-color: rgb(255, 255, 255);
     opacity: 1;
     border-radius: 10px;
