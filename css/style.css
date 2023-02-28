@@ -98,8 +98,8 @@
    }
 
   .APIContainer {
-    margin: 50px auto 150px auto;
-    padding: 10px 20px 10px 20px;
+    margin: 10px auto 50px auto;
+    padding: 20px;
     border-radius: 5px;
     width: 40%;
     min-width: 500px;
@@ -138,9 +138,9 @@
     height: 50px;
     font-size: 20px;
     font-weight: bold;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-align: center;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(193, 61, 61);
     opacity: 1;
     border-radius: 50px;
     -webkit-animation: bounce 0.75s infinite;
